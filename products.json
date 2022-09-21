@@ -1,0 +1,68 @@
+{
+  "items": [
+    {
+      "sys": { "id": "1" },
+      "fields": {
+        "title": "Kales",
+        "price": 10.99,
+        "image": { "fields": { "file": { "url": "./images/kales.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Spinach",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./images/spinach.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "3" },
+      "fields": {
+        "title": "Managu",
+        "price": 12.99,
+        "image": { "fields": { "file": { "url": "./images/managu.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "4" },
+      "fields": {
+        "title": "Strawberries",
+        "price": 22.99,
+        "image": { "fields": { "file": { "url": "./images/strawberry.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "5" },
+      "fields": {
+        "title": "Onions",
+        "price": 88.99,
+        "image": { "fields": { "file": { "url": "./images/onions.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "6" },
+      "fields": {
+        "title": "Tomatoes",
+        "price": 32.99,
+        "image": { "fields": { "file": { "url": "./images/tomatoes.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "7" },
+      "fields": {
+        "title": "Corriander",
+        "price": 45.99,
+        "image": { "fields": { "file": { "url": "./images/corriander.jpg" } } }
+      }
+    },
+    {
+      "sys": { "id": "8" },
+      "fields": {
+        "title": "Butternut",
+        "price": 33.99,
+        "image": { "fields": { "file": { "url": "./images/butternut.jpg" } } }
+      }
+    }
+  ]
+}

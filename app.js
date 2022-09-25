@@ -74,16 +74,20 @@ class UI{
                 event.target.innerText = "Added";
                 event.target.disabled = true;
                 //get product from products
-                let cartItem = {...Storage.getProduct(id), amount: 1};
+                let cartItem = { ...Storage.getProduct(id), amount: 1};
                 
                 //add product to cart 
-                cart = [...cart, cartItem];
+                cart = [ ...cart, cartItem];
+                
                 //save cart in local storage 
                 Storage.saveCart(cart);
                 //set cart values 
                 this.setCartValues(cart);
                 //display cart items
+                this.addCartItem(cartItem);
+
                 //show the cart
+                this.displayCart();
 
                 });
         
@@ -93,15 +97,37 @@ setCartValues(cart){
     let tempTotal = 0;
     let itemsTotal = 0;
     cart.map(item => {
-        tempTotal += item.price * item,amount;
+        tempTotal += item.price * item.amount;
         itemsTotal += item.amount;
     })
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     cartItems.innerText = itemsTotal;
-    console.log(cartTotal,cartItems);
+    
 }
+addCartItem(item){
+    const div=document.createElement("div");
+    div.classList.add('cart-item');
+    div.innerHTML = `<img src=${item.image} alt="product">
+    <div>
+        <h4>${item.title}</h4>
+        <h5>$${item.price}</h5>
+        <span class="remove-item" data-id=${item.id}>Remove from cart</span>
+    </div>
+    <div>
+        <i class="fa fa-chevron-up" data-id=${item.id}></i>
+        <p class="item-amount">${item.amount}</p>
+        <i class="fa fa-chevron-down" data-id=${item.id}></i>
+    </div>`
+    cartContent.appendChild(div);
+    
 }
+displayCart(){
+    cartOverlay.classList.add('transparentBcg');
+    cartDOM.classList.add('showCart');
+        }
 
+}
+//resume from 2:28:25
 //local storage 
 class Storage{ 
     static saveProducts(products){
@@ -112,7 +138,7 @@ class Storage{
         return products.find(product => product.id === id)
     }
     static saveCart(cart){
-        localStorage.setItem('cart', JSON.stringify(cart))
+        localStorage.setItem('cart', JSON.stringify(cart));
     }
 
 }
